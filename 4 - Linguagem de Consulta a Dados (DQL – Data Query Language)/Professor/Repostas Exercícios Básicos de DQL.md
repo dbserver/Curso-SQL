@@ -186,7 +186,3 @@ FROM REGISTRO;
 | 3500               |
 
 ---
-
-### Conclusão
-
-Esses exercícios básicos de **DQL** oferecem uma boa introdução às consultas SQL, permitindo que os alunos pratiquem o uso de `SELECT`, `WHERE`, `ORDER BY`, `JOIN` e funções agregadas simples como `COUNT` e `SUM`.

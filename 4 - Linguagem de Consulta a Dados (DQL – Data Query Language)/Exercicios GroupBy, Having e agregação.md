@@ -1,11 +1,6 @@
 ### Exercícios
 
-Aqui estão os exercícios de **Data Query Language (DQL)** com perguntas e respostas separadas para aluno e professor, utilizando as entidades **EXTRATO**, **TIPOREGISTRO** e **REGISTRO** como base.
-
----
-
 #### **Exercício 1: Junção com Condições Múltiplas**
-##### Pergunta para o Aluno:
 Escreva uma consulta que retorne o nome do titular da conta, o tipo de movimentação e o valor total das movimentações maiores que 500, agrupadas por titular e tipo de movimentação.
 
 - **Tabelas**: EXTRATO, TIPOREGISTRO, REGISTRO
@@ -51,7 +46,6 @@ Considere que existe uma coluna `DATA` na entidade **REGISTRO**, que armazena a 
 
 
 #### **Exercício 6: Consulta com HAVING**
-##### Pergunta para o Aluno:
 Crie uma consulta que retorne os titulares que tenham um valor total de movimentações superior a 1000. Use a cláusula `HAVING` para filtrar o resultado.
 
 - **Tabelas**: EXTRATO, REGISTRO

@@ -109,7 +109,3 @@ As **funções agregadas** em SQL também podem ser vistas como operações em c
 Essas operações são fundamentais para gerar resumos dos dados.
 
 ---
-
-### Conclusão
-
-A **DQL** é uma linguagem extremamente poderosa para manipulação de dados e está fundamentada nos princípios da **teoria dos conjuntos**. Ao entender essa relação, podemos abordar a criação de consultas de maneira mais intuitiva, compreendendo que estamos manipulando conjuntos de dados e aplicando operações matemáticas sobre eles. As operações como seleção, projeção, união, interseção e diferença permitem extrair e manipular dados de forma eficiente e clara.
