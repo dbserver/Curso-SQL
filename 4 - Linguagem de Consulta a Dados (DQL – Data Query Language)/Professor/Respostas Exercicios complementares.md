@@ -1,0 +1,149 @@
+### Exercícios Avançados de DQL
+
+Aqui estão os exercícios de **Data Query Language (DQL)** com perguntas e respostas separadas para aluno e professor, utilizando as entidades **EXTRATO**, **TIPOREGISTRO** e **REGISTRO** como base.
+
+---
+
+#### **Exercício 1: Junção com Condições Múltiplas**
+##### Pergunta para o Aluno:
+Escreva uma consulta que retorne o nome do titular da conta, o tipo de movimentação e o valor total das movimentações maiores que 500, agrupadas por titular e tipo de movimentação.
+
+- **Tabelas**: EXTRATO, TIPOREGISTRO, REGISTRO
+- **Condições**:
+  1. Filtrar movimentações com valor maior que 500.
+  2. Agrupar os resultados por nome do titular e tipo de movimentação.
+
+
+#### **Exercício 2: Consulta com Função Agregada e Ordenação**
+##### Pergunta para o Aluno:
+Crie uma consulta que retorne o tipo de movimentação e o valor médio das movimentações agrupadas por tipo. Os resultados devem ser ordenados pelo valor médio em ordem decrescente.
+
+- **Tabelas**: TIPOREGISTRO, REGISTRO
+- **Condições**:
+  1. Agrupar por tipo de movimentação.
+  2. Ordenar os resultados pelo valor médio (descendente).
+
+##### Resposta para o Professor:
+```sql
+SELECT T.TIPO, AVG(R.VALOR) AS MediaMovimentacao
+FROM REGISTRO R
+INNER JOIN TIPOREGISTRO T ON R.TIPOID = T.ID
+GROUP BY T.TIPO
+ORDER BY MediaMovimentacao DESC;
+```
+
+**Resultado Esperado:**
+
+| TIPO          | MediaMovimentacao |
+|---------------|-------------------|
+| Depósito      | 1250              |
+| Transferência | 400               |
+| Saque         | 200               |
+
+---
+
+#### **Exercício 3: Contagem com JOIN**
+##### Pergunta para o Aluno:
+Escreva uma consulta que conte quantas movimentações cada titular de conta realizou, independentemente do tipo de movimentação.
+
+- **Tabelas**: EXTRATO, REGISTRO
+- **Condições**:
+  1. Agrupar os resultados pelo nome do titular da conta.
+
+##### Resposta para o Professor:
+```sql
+SELECT E.NOMETITULAR, COUNT(R.ID) AS QuantidadeMovimentacoes
+FROM REGISTRO R
+INNER JOIN EXTRATO E ON R.EXTRATOID = E.ID
+GROUP BY E.NOMETITULAR;
+```
+
+**Resultado Esperado:**
+
+| NOMETITULAR | QuantidadeMovimentacoes |
+|-------------|-------------------------|
+| João Silva  | 3                       |
+| Maria Souza | 2                       |
+
+---
+
+#### **Exercício 4: Consulta com Subconsulta**
+##### Pergunta para o Aluno:
+Utilize uma subconsulta para retornar os titulares que possuem uma movimentação cujo valor é superior à média de todas as movimentações.
+
+- **Tabelas**: EXTRATO, REGISTRO
+- **Condições**:
+  1. Filtrar titulares com movimentações maiores que a média de todas as movimentações.
+
+##### Resposta para o Professor:
+```sql
+SELECT E.NOMETITULAR
+FROM REGISTRO R
+INNER JOIN EXTRATO E ON R.EXTRATOID = E.ID
+WHERE R.VALOR > (SELECT AVG(VALOR) FROM REGISTRO);
+```
+
+**Resultado Esperado:**
+
+| NOMETITULAR |
+|-------------|
+| João Silva  |
+| Maria Souza |
+
+---
+
+#### **Exercício 5: Uso de Funções de Data**
+##### Pergunta para o Aluno:
+Considere que existe uma coluna `DATA` na entidade **REGISTRO**, que armazena a data em que cada movimentação foi realizada. Crie uma consulta que retorne o nome do titular e o valor total de todas as movimentações realizadas nos últimos 30 dias.
+
+- **Tabelas**: EXTRATO, REGISTRO
+- **Coluna adicional**: `DATA` (na entidade REGISTRO)
+- **Condições**:
+  1. Filtrar movimentações dos últimos 30 dias.
+  2. Agrupar por titular.
+
+##### Resposta para o Professor:
+```sql
+SELECT E.NOMETITULAR, SUM(R.VALOR) AS TotalMovimentacoes
+FROM REGISTRO R
+INNER JOIN EXTRATO E ON R.EXTRATOID = E.ID
+WHERE R.DATA >= CURRENT_DATE - INTERVAL '30 days'
+GROUP BY E.NOMETITULAR;
+```
+
+**Resultado Esperado:**
+
+| NOMETITULAR | TotalMovimentacoes |
+|-------------|--------------------|
+| João Silva  | 1500               |
+| Maria Souza | 2000               |
+
+---
+
+#### **Exercício 6: Consulta com HAVING**
+##### Pergunta para o Aluno:
+Crie uma consulta que retorne os titulares que tenham um valor total de movimentações superior a 1000. Use a cláusula `HAVING` para filtrar o resultado.
+
+- **Tabelas**: EXTRATO, REGISTRO
+- **Condições**:
+  1. Agrupar os resultados por titular.
+  2. Filtrar pelo valor total de movimentações maior que 1000.
+
+##### Resposta para o Professor:
+```sql
+SELECT E.NOMETITULAR, SUM(R.VALOR) AS TotalMovimentacoes
+FROM REGISTRO R
+INNER JOIN EXTRATO E ON R.EXTRATOID = E.ID
+GROUP BY E.NOMETITULAR
+HAVING SUM(R.VALOR) > 1000;
+```
+
+**Resultado Esperado:**
+
+| NOMETITULAR | TotalMovimentacoes |
+|-------------|--------------------|
+| João Silva  | 1500               |
+| Maria Souza | 2000               |
+
+---
+
