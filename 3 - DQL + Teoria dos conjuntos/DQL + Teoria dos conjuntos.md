@@ -14,12 +14,12 @@ Por exemplo, considere a tabela **EXTRATO**:
 
 | ID  | NUMEROCONTA | NOMETITULAR |
 |-----|-------------|-------------|
-| 1   | 12345       | João Silva  |
-| 2   | 67890       | Maria Souza |
+| 1   | 915201       | Rory Fry  |
+| 2   | 67890       | Amari Black |
 
 Essa tabela pode ser vista como um conjunto:
 
-- **EXTRATO** = { (1, 12345, João Silva), (2, 67890, Maria Souza) }
+- **EXTRATO** = { (1, 915201, Rory Fry), (2, 67890, Amari Black) }
 
 Cada linha da tabela é um elemento do conjunto.
 
@@ -37,16 +37,16 @@ A **seleção** na teoria dos conjuntos corresponde a uma operação de filtro, 
 
 **Exemplo:**
 
-Suponha que queremos selecionar apenas o registro do titular "João Silva" da tabela **EXTRATO**.
+Suponha que queremos selecionar apenas o registro do titular "Rory Fry" da tabela **EXTRATO**.
 
 ```sql
-SELECT * FROM EXTRATO WHERE NOMETITULAR = 'João Silva';
+SELECT * FROM EXTRATO WHERE NOMETITULAR = 'Rory Fry';
 ```
 
 **Teoria dos Conjuntos:**
 
-- Conjunto original: EXTRATO = { (1, 12345, João Silva), (2, 67890, Maria Souza) }
-- Subconjunto selecionado: { (1, 12345, João Silva) }
+- Conjunto original: EXTRATO = { (1, 915201, Rory Fry), (2, 67890, Amari Black) }
+- Subconjunto selecionado: { (1, 915201, Rory Fry) }
 
 Essa operação retorna um subconjunto com base em uma condição.
 
@@ -66,8 +66,8 @@ SELECT NOMETITULAR FROM EXTRATO;
 
 **Teoria dos Conjuntos:**
 
-- Conjunto original: EXTRATO = { (1, 12345, João Silva), (2, 67890, Maria Souza) }
-- Projeção: { (João Silva), (Maria Souza) }
+- Conjunto original: EXTRATO = { (1, 915201, Rory Fry), (2, 67890, Amari Black) }
+- Projeção: { (Rory Fry), (Amari Black) }
 
 Nesse caso, retornamos um conjunto contendo apenas os nomes dos titulares.
 
@@ -89,12 +89,12 @@ SELECT NOMETITULAR FROM EXTRATO_ARGENTINA;
 
 **Teoria dos Conjuntos:**
 
-- **EXTRATO_BRASIL** = { (João Silva), (Maria Souza) }
-- **EXTRATO_ARGENTINA** = { (Carlos Gómez), (Maria Souza) }
+- **EXTRATO_BRASIL** = { (Rory Fry), (Amari Black) }
+- **EXTRATO_ARGENTINA** = { (Carlos Gómez), (Amari Black) }
 
-**União:** { (João Silva), (Maria Souza), (Carlos Gómez) }
+**União:** { (Rory Fry), (Amari Black), (Carlos Gómez) }
 
-A operação `UNION` combina ambos os conjuntos de registros e elimina duplicatas (no caso, "Maria Souza").
+A operação `UNION` combina ambos os conjuntos de registros e elimina duplicatas (no caso, "Amari Black").
 
 ---
 

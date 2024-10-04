@@ -28,8 +28,8 @@ O objetivo é normalizar a tabela **Movimentacoes**, dividindo os dados em difer
    **Tabela EXTRATO**:
    | ID  | NUMEROCONTA | NOMETITULAR   |
    |-----|-------------|---------------|
-   | 1   | 12345       | João Silva    |
-   | 2   | 67890       | Maria Souza   |
+   | 1   | 915201       | Rory Fry    |
+   | 2   | 67890       | Amari Black   |
 
 3. **Terceira Forma Normal (3NF)**:
    - A 3NF elimina dependências transitivas. Observamos que a coluna **TIPO** (Depósito, Saque, Transferência) está repetida para cada movimentação.

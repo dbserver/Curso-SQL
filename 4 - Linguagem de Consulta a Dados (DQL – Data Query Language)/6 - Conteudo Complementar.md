@@ -47,8 +47,8 @@ ORDER BY T.TIPO ASC, R.VALOR DESC;
 Imaginemos que temos as seguintes tabelas:
 
 - **EXTRATO**
-  - ID: 1, NUMEROCONTA: '12345', NOMETITULAR: 'João Silva'
-  - ID: 2, NUMEROCONTA: '54321', NOMETITULAR: 'Maria Souza'
+  - ID: 1, NUMEROCONTA: '915201', NOMETITULAR: 'Rory Fry'
+  - ID: 2, NUMEROCONTA: '54321', NOMETITULAR: 'Amari Black'
 
 - **REGISTRO**
   - ID: 1, VALOR: 500, EXTRATOID: 1, TIPOID: 1
@@ -56,7 +56,7 @@ Imaginemos que temos as seguintes tabelas:
 
 - **TIPOREGISTRO**
   - ID: 1, TIPO: 'Débito'
-  - ID: 2, TIPO: 'Crédito'
+  - ID: 2, TIPO: 'SAIDA'
 
 Ao executar a consulta:
 
@@ -72,8 +72,8 @@ ORDER BY T.TIPO ASC, R.VALOR DESC;
 
 | NUMEROCONTA | VALOR | TIPO    |
 |--------------|-------|---------|
-| 54321       | 200   | Crédito |
-| 12345       | 500   | Débito  |
+| 54321       | 200   | SAIDA |
+| 915201       | 500   | Débito  |
 
 
 ## Autojunção e Junções Equivalentes/Não Equivalentes

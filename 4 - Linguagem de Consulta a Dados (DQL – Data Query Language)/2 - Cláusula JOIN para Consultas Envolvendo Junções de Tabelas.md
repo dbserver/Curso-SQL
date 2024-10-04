@@ -22,11 +22,11 @@ FROM EXTRATO, TIPOREGISTRO;
 
 | ID | NUMEROCONTA | NOMETITULAR | ID | TIPO        |
 |----|-------------|-------------|----|-------------|
-| 1  | 12345       | João Silva  | 1  | Crédito     |
-| 1  | 12345       | João Silva  | 2  | Débito      |
-| 2  | 67890       | Maria Souza | 1  | Crédito     |
-| 2  | 67890       | Maria Souza | 2  | Débito      |
-| 3  | 54321       | Pedro Lima  | 1  | Crédito     |
+| 1  | 915201       | Rory Fry  | 1  | SAIDA     |
+| 1  | 915201       | Rory Fry  | 2  | Débito      |
+| 2  | 67890       | Amari Black | 1  | SAIDA     |
+| 2  | 67890       | Amari Black | 2  | Débito      |
+| 3  | 54321       | Pedro Lima  | 1  | SAIDA     |
 | 3  | 54321       | Pedro Lima  | 2  | Débito      |
 
 ### 2. **Junções Internas (INNER JOIN)**
@@ -49,7 +49,7 @@ INNER JOIN REGISTRO R ON E.ID = R.EXTRATOID;
 
 | NUMEROCONTA | VALOR |
 |--------------|-------|
-| 12345        | 500   |
+| 915201        | 500   |
 | 67890        | 200   |
 
 Neste exemplo, estamos recuperando a `NUMEROCONTA` e o `VALOR` das movimentações que têm uma correspondência na tabela **EXTRATO**.
@@ -72,7 +72,7 @@ LEFT JOIN REGISTRO R ON E.ID = R.EXTRATOID;
 
 | NUMEROCONTA | VALOR |
 |--------------|-------|
-| 12345        | 500   |
+| 915201        | 500   |
 | 67890        | 200   |
 | 54321        | NULL  |
 
@@ -94,7 +94,7 @@ RIGHT JOIN REGISTRO R ON E.ID = R.EXTRATOID;
 
 | NUMEROCONTA | VALOR |
 |--------------|-------|
-| 12345        | 500   |
+| 915201        | 500   |
 | 67890        | 200   |
 | NULL         | 300   |
 
@@ -116,7 +116,7 @@ FULL JOIN REGISTRO R ON E.ID = R.EXTRATOID;
 
 | NUMEROCONTA | VALOR |
 |--------------|-------|
-| 12345        | 500   |
+| 915201        | 500   |
 | 67890        | 200   |
 | 54321        | NULL  |
 | NULL         | 300   |
@@ -139,11 +139,11 @@ CROSS JOIN TIPOREGISTRO TIPO;
 
 | NUMEROCONTA | TIPO        |
 |--------------|-------------|
-| 12345        | Crédito     |
-| 12345        | Débito      |
-| 67890        | Crédito     |
+| 915201        | SAIDA     |
+| 915201        | Débito      |
+| 67890        | SAIDA     |
 | 67890        | Débito      |
-| 54321        | Crédito     |
+| 54321        | SAIDA     |
 | 54321        | Débito      |
 
 No exemplo, cada `NUMEROCONTA` é combinada com cada tipo de registro, gerando um produto cartesiano.

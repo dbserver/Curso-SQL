@@ -76,9 +76,9 @@ Suponha que temos a seguinte tabela de informações sobre pedidos de clientes:
 +------------+-----------------+-------------------+-------------------+
 | Pedido ID  | Nome do Cliente  | Produto           | Preço do Produto  |
 +------------+-----------------+-------------------+-------------------+
-| 001        | João Silva       | Camisa            | 50,00             |
+| 001        | Rory Fry       | Camisa            | 50,00             |
 | 002        | Maria Santos     | Vestido           | 80,00             |
-| 003        | João Silva       | Calça             | 100,00            |
+| 003        | Rory Fry       | Calça             | 100,00            |
 +------------+-----------------+-------------------+-------------------+
 ```
 
@@ -100,7 +100,7 @@ Tabela **Clientes**:
 +------------+------------------+
 | Cliente ID | Nome do Cliente   |
 +------------+------------------+
-| 1          | João Silva        |
+| 1          | Rory Fry        |
 | 2          | Maria Santos      |
 +------------+------------------+
 ```
@@ -136,7 +136,7 @@ Documento de um pedido:
 {
   "PedidoID": "001",
   "Cliente": {
-    "Nome": "João Silva"
+    "Nome": "Rory Fry"
   },
   "Produtos": [
     {

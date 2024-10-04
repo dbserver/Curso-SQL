@@ -34,8 +34,8 @@ FROM EXTRATO;
 
 | ID  | NUMEROCONTA | NOMETITULAR   |
 |-----|-------------|---------------|
-| 1   | 12345       | João Silva    |
-| 2   | 67890       | Maria Souza   |
+| 1   | 915201       | Rory Fry    |
+| 2   | 67890       | Amari Black   |
 
 ---
 
@@ -47,19 +47,19 @@ A cláusula `WHERE` permite restringir os resultados com base em uma ou mais con
 
 #### Exemplo:
 
-Vamos buscar o extrato do titular **João Silva**:
+Vamos buscar o extrato do titular **Rory Fry**:
 
 ```sql
 SELECT ID, NUMEROCONTA, NOMETITULAR
 FROM EXTRATO
-WHERE NOMETITULAR = 'João Silva';
+WHERE NOMETITULAR = 'Rory Fry';
 ```
 
 **Resultado:**
 
 | ID  | NUMEROCONTA | NOMETITULAR   |
 |-----|-------------|---------------|
-| 1   | 12345       | João Silva    |
+| 1   | 915201       | Rory Fry    |
 
 ---
 
