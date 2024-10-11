@@ -56,10 +56,10 @@ Os bancos de dados são compostos por diversos elementos que facilitam a sua ope
   
   | ClienteID | Nome         | Telefone       |
   |-----------|--------------|----------------|
-  | 1         | João Silva   | 9999-9999      |
-  | 2         | Maria Souza  | 8888-8888      |
+  | 1         | Rory Fry   | 9999-9999      |
+  | 2         | Amari Black  | 8888-8888      |
 
-- **Registros (Linhas)**: Cada linha de uma tabela é um registro. No exemplo acima, o registro do cliente "João Silva" é uma linha na tabela "Clientes".
+- **Registros (Linhas)**: Cada linha de uma tabela é um registro. No exemplo acima, o registro do cliente "Rory Fry" é uma linha na tabela "Clientes".
   
 - **Campos (Colunas)**: Cada coluna de uma tabela armazena um atributo específico da entidade. No exemplo acima, "Nome" e "Telefone" são colunas da tabela "Clientes".
   
@@ -75,7 +75,7 @@ As quatro operações básicas realizadas em bancos de dados são referidas como
 
 - **Create (Criar)**: Inserção de novos dados no banco.
   ```sql
-  INSERT INTO Clientes (ClienteID, Nome, Telefone) VALUES (1, 'João Silva', '9999-9999');
+  INSERT INTO Clientes (ClienteID, Nome, Telefone) VALUES (1, 'Rory Fry', '9999-9999');
   ```
 - **Read (Ler)**: Consulta de dados existentes.
   ```sql

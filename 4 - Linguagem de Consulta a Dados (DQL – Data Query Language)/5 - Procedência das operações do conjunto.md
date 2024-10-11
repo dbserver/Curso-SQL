@@ -31,7 +31,7 @@ Vamos considerar as tabelas **EXTRATO** e **REGISTRO**. Suponha que desejamos co
 ```sql
 SELECT NUMEROCONTA
 FROM EXTRATO
-WHERE NOMETITULAR = 'João Silva'
+WHERE NOMETITULAR = 'Rory Fry'
 
 UNION
 
@@ -50,7 +50,7 @@ WHERE VALOR > 100;
 ```sql
 SELECT NUMEROCONTA
 FROM EXTRATO
-WHERE NOMETITULAR = 'João Silva'
+WHERE NOMETITULAR = 'Rory Fry'
 
 INTERSECT
 
@@ -66,7 +66,7 @@ WHERE VALOR > 100;
 ```sql
 SELECT NUMEROCONTA
 FROM EXTRATO
-WHERE NOMETITULAR = 'João Silva'
+WHERE NOMETITULAR = 'Rory Fry'
 
 EXCEPT
 
@@ -86,7 +86,7 @@ Para garantir que as operações sejam executadas na ordem desejada, os parênte
 ```sql
 SELECT NUMEROCONTA
 FROM EXTRATO
-WHERE NOMETITULAR = 'João Silva'
+WHERE NOMETITULAR = 'Rory Fry'
 
 UNION
 
